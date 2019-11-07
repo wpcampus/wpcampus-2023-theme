@@ -1,0 +1,31 @@
+{
+  "name": "wpcampus-2020-theme",
+  "version": "1.0.0",
+  "description": "The WordPress theme for the WPCampus 2020 conference website.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wpcampus/wpcampus-2020-theme.git"
+  },
+  "author": "WPCampus <code@wpcampus.org>",
+  "contributors": [
+    "Rachel Cherry <rachel@wpcampus.org>"
+  ],
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/wpcampus/wpcampus-2020-theme/issues"
+  },
+  "homepage": "https://github.com/wpcampus/wpcampus-2020-theme#readme",
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
