@@ -1,0 +1,41 @@
+// COLORS
+$wpc-dark-blue: #2e3641;
+$wpc-royal-blue: #1159bd;
+$wpc-light-blue: #e4eaf4;
+$wpc-orange: #A76739;
+
+$tulane-green: #336666;
+$tulane-green-dark: darken( $tulane-green, 10% );
+$tulane-green-light: #d6e0e0;
+
+// Banner
+$banner-height: 40px;
+
+// Header
+$header-color-bg: $tulane-green;
+$header-color: #fff;
+$header-logo-height: 75px;
+$header-padding-horiz: 20px;
+$header-padding-vert: 25px;
+$header-height: $header-logo-height + ( $header-padding-vert * 2 );
+
+// Hero
+$hero-top: $banner-height + $header-height;
+
+// Menu
+$header-menu-bp-width: 540px;
+$header-menu-bp-closed: "screen and (max-width: " + ( $header-menu-bp-width - 1px ) + ");";
+$header-menu-bp-open: "screen and (min-width: " + $header-menu-bp-width + ");";
+
+$header-menu-bp-wide-open-width: 1020px;
+$header-menu-bp-wide-open: "screen and (min-width: " + $header-menu-bp-wide-open-width + ");";
+
+$header-menu-bp-superwide-width: 1520px;
+$header-menu-bp-superwide: "screen and (min-width: " + $header-menu-bp-superwide-width + ");";
+
+$wpc-toggle-bar-bg: #fff;
+$wpc-toggle-bar-width: 25px;
+$wpc-toggle-bar-height: 5px;
+$wpc-toggle-bar-total-width: $wpc-toggle-bar-width + 10px;
+
+$nav_dropddown_symbol_width: 0.5em;

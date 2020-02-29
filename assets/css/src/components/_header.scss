@@ -1,0 +1,456 @@
+html.wpc-menu-open,
+html.wpc-menu-open body {
+
+	@media #{$header-menu-bp-closed} {
+		width: 100%;
+		height: 100%;
+		overflow: scroll;
+	}
+}
+
+// So we dont have 2 of these at same time
+html.wpc-menu-open #wpc-network-footer .social-media-icons {
+	display: none;
+}
+
+#wpc-header {
+	background: $header-color-bg;
+	padding: $header-padding-vert $header-padding-horiz;
+	color: $header-color;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+	&:before {
+		content: '';
+		position: absolute;
+		right: -30px;
+		bottom: -40px;
+		width: 200px;
+		height: 200px; //$banner-height + $header-height;
+		background: url("../images/new-orleans-stamp.png") 0 0 no-repeat;
+		background-size: 100% auto;
+		opacity: 0.05;
+		overflow: hidden;
+		z-index: -1;
+
+	}
+
+	a {
+		display: block;
+		color: inherit;
+	}
+
+	.wpc-2020-logo-link {
+		display: block;
+		margin: 0;
+	}
+
+	.wpc-2020-logo {
+		display: block;
+		fill: #fff;
+		margin: 0 auto;
+		width: 100%;
+		height: auto;
+	}
+
+	.wpc-toggle-menu {
+		display: block;
+		background: $tulane-green-dark;
+		border: 0;
+		margin: 1em 0 0;
+		padding: 0;
+		font-size: 1.3rem;
+		font-weight: 300;
+		height: 45px;
+		line-height: 45px;
+		text-transform: uppercase;
+		color: #fff;
+
+		.wpc-toggle-bar {
+			display: none;
+		}
+
+		&:hover,
+		&:focus {
+			background: darken( $tulane-green-dark, 7% );
+		}
+	}
+
+	.wpc-2020-nav-primary {
+		display: none;
+		color: inherit;
+
+		button.dropdown,
+		button.dropdown-toggle {
+			display: none;
+		}
+
+		ul {
+			font-size: inherit;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li.nav__item {
+				margin: 0;
+
+				a {
+					display: block;
+
+					span {
+						display: block;
+						width: 100%;
+						padding: 0.5em 0.75em;
+					}
+
+					&:focus {
+						height: auto;
+					}
+				}
+			}
+
+			li.nav__item--current > a,
+			li.nav__item > a:hover,
+			li.nav__item > a:focus {
+				background: $tulane-green-dark;
+				color: #fff;
+			}
+		}
+	}
+
+	.social-media-icons {
+		display: none;
+	}
+
+	& > .wpc-container {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	@media #{$header-menu-bp-closed} {
+
+		&.wpc-menu-open {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 10000;
+			overflow-x: hidden;
+			overflow-y: scroll;
+
+			.wpc-toggle-menu {
+				background: transparent;
+				width: $wpc-toggle-bar-total-width;
+				height: $wpc-toggle-bar-total-width;
+				line-height: $wpc-toggle-bar-total-width;
+				position: relative;
+				margin: 0;
+				align-self: center;
+
+				.wpc-open-menu-label {
+					display: none;
+				}
+
+				.wpc-toggle-bar {
+					display: block;
+					background: $wpc-toggle-bar-bg;
+					width: 100%;
+					height: $wpc-toggle-bar-height;
+					position: absolute;
+					left: 0;
+					top: 40%;
+					transform: rotate(45deg);
+
+					&:before {
+						content: '';
+						background: $wpc-toggle-bar-bg;
+						width: 100%;
+						height: $wpc-toggle-bar-height;
+						position: absolute;
+						left: 0;
+						top: 0;
+						transform: rotate(90deg);
+					}
+				}
+
+				&:hover,
+				&:focus {
+					background: transparent;
+				}
+			}
+
+			.wpc-2020-nav-primary {
+				display: block;
+				grid-column: 1 / span 2;
+				grid-row: 2 / span 1;
+				font-size: 1.75rem;
+				margin: 1em 0 0;
+
+				ul {
+					display: block;
+
+					li.nav__item {
+
+						&--has-sub {
+
+							ul.nav__item__sub {
+								padding: 0 0 0 2rem;
+							}
+						}
+					}
+				}
+			}
+
+			.social-media-icons {
+				display: block;
+				margin: 1em 0 0;
+				grid-column: 1 / span 2;
+				grid-row: 3 / span 1;
+
+				ul {
+					display: flex;
+					justify-content: flex-start;
+					align-content: center;
+					margin: 0;
+					padding: 0;
+
+					li {
+						display: block;
+						flex-grow: 1;
+						list-style: none;
+						margin: 0;
+						padding: 0;
+					}
+
+					svg {
+						display: block;
+						width: auto;
+						height: 35px;
+						fill: #fff;
+						margin: 0 auto;
+					}
+
+					a {
+						display: block;
+						height: 35px;
+					}
+				}
+			}
+
+			& > .wpc-container {
+				display: grid;
+				grid-template-columns: auto $wpc-toggle-bar-total-width;
+				grid-template-rows: auto auto auto;
+				grid-column-gap: 1.5em;
+			}
+
+			&:before {
+				width: 250px;
+				height: 250px;
+				right: -20px;
+				bottom: -20px;
+				opacity: 0.05;
+			}
+		}
+	}
+
+	@media #{$header-menu-bp-open} {
+
+		.wpc-2020-logo-link {
+			height: $header-logo-height;
+		}
+
+		.wpc-2020-logo {
+			height: $header-logo-height;
+		}
+
+		.wpc-toggle-menu {
+			display: none;
+		}
+
+		.wpc-2020-nav-primary {
+			display: block;
+			font-size: 1.175em;
+			margin: .75em 0 -0.5em;
+
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-content: center;
+
+				li.nav__item {
+					flex-basis: auto;
+					justify-self: flex-start;
+					text-align: center;
+
+					&--has-sub {
+						position: relative;
+						border: 1px solid rgba(255,255,255,0.2);
+						padding-right: $nav_dropddown_symbol_width * 3;
+
+						button.dropdown,
+						button.dropdown-toggle {
+							display: block;
+							background: transparent;
+							color: #fff;
+							cursor: pointer;
+							position: absolute;
+							right: 0;
+							top: 50%;
+							width: $nav_dropddown_symbol_width * 3;
+							height: 100%;
+							font-size: inherit;
+							line-height: inherit;
+							margin: 0;
+							padding: 0;
+							border: none;
+							border-radius: 0;
+							transform: translateY(-50%);
+							overflow: visible;
+						}
+
+						button.dropdown:-moz-focusring,
+						button.dropdown-toggle:-moz-focusring {
+							border-color: #fff;
+							outline: 1px dotted #fff;
+						}
+
+						.dropdown-symbol {
+							display: block;
+							background: transparent;
+							position: absolute;
+							right: 50%;
+							top: 50%;
+							width: $nav_dropddown_symbol_width;
+							height: $nav_dropddown_symbol_width;
+							border: solid #fff;
+							border-width: 0 2px 2px 0;
+							transform: translateX(50%) translateY(-50%) rotate(45deg);
+							color: #fff;
+						}
+
+						/*ul ul .dropdown,
+                        ul ul .dropdown-toggle {
+                            top: 40%;
+                            right: 0.2em;
+                        }
+
+                        ul ul .dropdown-symbol {
+                            transform: rotate(-45deg);
+                        }*/
+
+						.dropdown-toggle:hover,
+						.nav-item--has-toggle:hover .dropdown-toggle {
+							pointer-events: none;
+						}
+
+						/* Need for non-JS */
+						li.nav__item--has-sub,
+						li.nav-item--has-toggle {
+							position: relative;
+							padding-right: var(--dropdown-symbol-width);
+						}
+
+						ul.nav__item__sub {
+							display: none;
+							min-width: 100%;
+							position: absolute;
+							left: 0;
+							top: 100%;
+							background: #fff;
+							color: #222;
+
+							* {
+								color: inherit;
+							}
+
+							li.nav__item {
+								border: 1px solid #d5d5d5;
+							}
+
+							li.nav__item--current a,
+							li.nav__item a:hover,
+							li.nav__item a:focus {
+								background: $tulane-green-light;
+								color: #222;
+							}
+						}
+
+						&:focus-within,
+						&.nav-item--toggled-on,
+						&:hover,
+						&:focus {
+							background: $tulane-green-dark;
+
+							ul.nav__item__sub {
+								display: block;
+							}
+						}
+					}
+
+					&--current {
+
+						button.dropdown,
+						button.dropdown-toggle {
+							background: $tulane-green-dark;
+						}
+					}
+				}
+			}
+		}
+
+		.social-media-icons {
+			display: none;
+		}
+	}
+
+	@media #{$header-menu-bp-wide-open} {
+		overflow: visible;
+
+		&:before {
+			right: 5%;
+		}
+
+		.wpc-2020-nav-primary {
+			flex-grow: 1;
+			align-self: center;
+			padding: 0 0 0 2em;
+			margin: 0;
+
+			ul {
+				justify-content: flex-start;
+				align-content: flex-start;
+				align-items: center;
+
+				li {
+					flex-grow: 1;
+					align-items: center;
+
+					a {
+
+						span {
+							padding-left: 0;
+							padding-right: 0;
+						}
+					}
+				}
+			}
+		}
+
+		& > .wpc-container {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	@media #{$header-menu-bp-superwide} {
+
+		&:before {
+			opacity: 0.1;
+		}
+	}
+}
+

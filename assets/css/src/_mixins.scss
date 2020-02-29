@@ -1,0 +1,44 @@
+// Will convert the element to a screen reader element
+@mixin for-screen-reader() {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+	position: absolute !important;
+	white-space: nowrap !important;
+	width: 1px !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	border: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+// Will set placeholder color
+@mixin set-placeholder-color( $color ) {
+
+	// WebKit browsers
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+
+	// Mozilla Firefox 4 to 18
+	&:-moz-placeholder {
+		color: $color;
+		opacity:  1;
+	}
+
+	// Mozilla Firefox 19+
+	&::-moz-placeholder {
+		color: $color;
+		opacity:  1;
+	}
+
+	// Internet Explorer 10+
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin imitate-container() {
+	max-width: $wpc-container-max-width;
+	margin: 0 auto;
+}
