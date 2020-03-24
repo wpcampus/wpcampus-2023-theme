@@ -371,3 +371,56 @@ function wpcampus_2021_print_logo( $color = 'black' ) {
 	</svg>
 	<?php
 }
+
+function wpcampus_2021_get_callout_status( $args = [] ) {
+	$defaults = [
+		'heading'      => 2,
+		'show_heading' => true,
+	];
+	$args = wp_parse_args( $args, $defaults );
+	$markup = '<div class="callout light-royal-blue">';
+
+	if ( ! empty( $args['show_heading'] ) ) {
+
+		if ( empty( $args['heading'] ) ) {
+			$heading_level = $defaults['heading'];
+		} else {
+			$heading_level = (int) $args['heading'];
+			if ( $heading_level < 1 || $heading_level > 6 ) {
+				$heading_level = $defaults['heading'];
+			}
+		}
+
+		$heading_str_start = '<h' . $heading_level . '>';
+		$heading_str_end = '</h' . $heading_level . '>';
+
+		$markup .= $heading_str_start . 'Status of the event' . $heading_str_end;
+
+	}
+
+	$markup .= '<p>WPCampus 2021 was scheduled for New Orleans after <a href="https://2020.wpcampus.org">WPCampus 2020</a> pivoted to an online conference due to COVID-19. We are extremely grateful that Tulane University IT in New Orleans has agreed to continue to be our in-person venue sponsor. The planning committee is working to finalize details for the 2021 event. <strong><a href="http://eepurl.com/dukZvP">Subscribe to our newsletter</a> for updates.</strong></p>
+		<p><strong>The following dates are being considered for WPCampus 2021:</strong></p>
+		<ul>
+ 	        <li>July 14-16, 2021 (Wed-Fri)</li>
+ 	        <li>July 21-23, 2021  (Wed-Fri)</li>
+ 	        <li>July 28-30, 2021  (Wed-Fri)</li>
+		</ul>
+	</div>';
+	return $markup;
+}
+
+function wpcampus_2021_print_callout_status( $args = [] ) {
+	echo wpcampus_2021_get_callout_status( $args );
+}
+
+function wpcampus_2021_process_status_shortcode( $args ) {
+	$args = shortcode_atts(
+		[
+			'heading'      => 2,
+			'show_heading' => true,
+		], $args, 'wpcampus_2021_status'
+	);
+	return wpcampus_2021_get_callout_status( $args );
+}
+
+add_shortcode( 'wpcampus_2021_status', 'wpcampus_2021_process_status_shortcode' );
