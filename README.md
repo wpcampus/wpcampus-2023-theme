@@ -1,6 +1,6 @@
-# WPCampus 2020 - WordPress Theme
+# WPCampus 2021 - WordPress Theme
 
-This is the WordPress theme used to power the WPCampus 2020 website at [https://2020.wpcampus.org](https://2020.wpcampus.org).
+This is the WordPress theme used to power the WPCampus 2021 website at [https://2021.wpcampus.org](https://2021.wpcampus.org).
 
 ## Disclaimer
 

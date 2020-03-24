@@ -6,7 +6,7 @@
  * hook available after WP object is setup
  * and we can use conditional tags.
  */
-function wpcampus_2020_setup_theme_parts() {
+function wpcampus_2021_setup_theme_parts() {
 
 	// Move notifications on the home page.
 	// Print network notifications.
@@ -18,16 +18,16 @@ function wpcampus_2020_setup_theme_parts() {
 	}
 
 	if ( is_front_page() ) {
-		add_action( 'wpcampus_before_article', 'wpcampus_2020_print_site_h1' );
+		add_action( 'wpcampus_before_article', 'wpcampus_2021_print_site_h1' );
 	}
 }
 
-add_action( 'wp', 'wpcampus_2020_setup_theme_parts', 10 );
+add_action( 'wp', 'wpcampus_2021_setup_theme_parts', 10 );
 
 /**
  * Setup/enqueue styles and scripts for theme.
  */
-function wpcampus_2020_enqueue_theme() {
+function wpcampus_2021_enqueue_theme() {
 
 	$assets_ver = '1.2';
 
@@ -37,12 +37,12 @@ function wpcampus_2020_enqueue_theme() {
 	$wpcampus_dir_js = $wpcampus_dir . 'assets/js/';
 
 	// Enqueue the base styles and script.
-	wp_enqueue_style( 'wpcampus-2020', $wpcampus_dir_css . 'styles.min.css', [ 'wpcampus-parent' ], $assets_ver );
+	wp_enqueue_style( 'wpcampus-2021', $wpcampus_dir_css . 'styles.min.css', [ 'wpcampus-parent' ], $assets_ver );
 
 	// @TODO move to network?
-	wp_enqueue_script( 'wpcampus-2020-nav-focus', $wpcampus_dir_js . 'nav-focus.min.js', [], $assets_ver, true );
+	wp_enqueue_script( 'wpcampus-2021-nav-focus', $wpcampus_dir_js . 'nav-focus.min.js', [], $assets_ver, true );
 	wp_localize_script(
-		'wpcampus-2020-nav-focus',
+		'wpcampus-2021-nav-focus',
 		'wp_nav_focus',
 		[
 			'expand'   => __( 'Expand child menu', 'wpcampus-parent' ),
@@ -52,9 +52,9 @@ function wpcampus_2020_enqueue_theme() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'wpcampus_2020_enqueue_theme', 10 );
+add_action( 'wp_enqueue_scripts', 'wpcampus_2021_enqueue_theme', 10 );
 
-function wpcampus_2020_print_header_menu_item( $menu_item ) {
+function wpcampus_2021_print_header_menu_item( $menu_item ) {
 
 	$is_current = $_SERVER['REQUEST_URI'] === $menu_item['href'];
 
@@ -94,7 +94,7 @@ function wpcampus_2020_print_header_menu_item( $menu_item ) {
 				<?php
 
 				foreach ( $menu_item['children'] as $child ) {
-					wpcampus_2020_print_header_menu_item( $child );
+					wpcampus_2021_print_header_menu_item( $child );
 				}
 
 				?>
@@ -107,7 +107,7 @@ function wpcampus_2020_print_header_menu_item( $menu_item ) {
 	<?php
 }
 
-function wpcampus_2020_print_header() {
+function wpcampus_2021_print_header() {
 
 	$menu = [
 		[
@@ -142,17 +142,17 @@ function wpcampus_2020_print_header() {
 
 	?>
 	<div class="wpc-container">
-		<a class="wpc-2020-logo-link" href="/" title="WPCampus 2020 Home"><?php wpcampus_2020_print_logo(); ?></a>
-		<button class="wpc-toggle-menu" data-toggle="wpc-header" aria-label="<?php _e( 'Toggle menu', 'wpcampus-2020' ); ?>">
+		<a class="wpc-2021-logo-link" href="/" title="WPCampus 2021 Home"><?php wpcampus_2021_print_logo(); ?></a>
+		<button class="wpc-toggle-menu" data-toggle="wpc-header" aria-label="<?php _e( 'Toggle menu', 'wpcampus-2021' ); ?>">
 			<div class="wpc-toggle-bar"></div>
-			<div class="wpc-open-menu-label"><?php _e( 'View menu', 'wpcampus-2020' ); ?></div>
+			<div class="wpc-open-menu-label"><?php _e( 'View menu', 'wpcampus-2021' ); ?></div>
 		</button>
-		<nav class="wpc-2020-nav-primary nav--toggle-sub" aria-label="Primary">
+		<nav class="wpc-2021-nav-primary nav--toggle-sub" aria-label="Primary">
 			<ul>
 				<?php
 
 				foreach ( $menu as $menu_item ) {
-					wpcampus_2020_print_header_menu_item( $menu_item );
+					wpcampus_2021_print_header_menu_item( $menu_item );
 				}
 
 				?>
@@ -169,9 +169,9 @@ function wpcampus_2020_print_header() {
 	<?php
 }
 
-add_action( 'wpc_add_to_header', 'wpcampus_2020_print_header', 10 );
+add_action( 'wpc_add_to_header', 'wpcampus_2021_print_header', 10 );
 
-function wpcampus_2020_print_site_h1() {
+function wpcampus_2021_print_site_h1() {
 	?>
 	<h1 class="for-screen-reader">WPCampus: Where WordPress Meets Higher Education</h1>
 	<?php
@@ -180,7 +180,7 @@ function wpcampus_2020_print_site_h1() {
 /**
  * Add header action button(s).
  */
-function wpcampus_2020_print_hero() {
+function wpcampus_2021_print_hero() {
 
 	if ( ! is_front_page() ) {
 		return;
@@ -205,12 +205,12 @@ function wpcampus_2020_print_hero() {
 	<?php
 }
 
-add_action( 'wpc_add_before_body', 'wpcampus_2020_print_hero', 2 );
+add_action( 'wpc_add_before_body', 'wpcampus_2021_print_hero', 2 );
 
-function wpcampus_2020_print_logo() {
+function wpcampus_2021_print_logo() {
 	?>
-	<svg class="wpc-2020-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1270 320" style="enable-background:new 0 0 1270 320;" xml:space="preserve">
-        <title>WPCampus: Where WordPress meets Higher Education takes place July 15-17, 2020 in New Orleans, Louisiana</title>
+	<svg class="wpc-2021-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1270 320" style="enable-background:new 0 0 1270 320;" xml:space="preserve">
+        <title>WPCampus: Where WordPress meets Higher Education takes place July, 2021 in New Orleans, Louisiana</title>
 		<style type="text/css">
 			.st0 {
 				opacity: 0.7;
