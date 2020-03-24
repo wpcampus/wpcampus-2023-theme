@@ -207,17 +207,17 @@ function wpcampus_2021_print_hero() {
 
 add_action( 'wpc_add_before_body', 'wpcampus_2021_print_hero', 2 );
 
-function wpcampus_2021_print_logo() {
+function wpcampus_2021_print_logo( $color = 'black' ) {
 	?>
 	<svg class="wpc-2021-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1270 320" style="enable-background:new 0 0 1270 320;" xml:space="preserve">
 		<title>WPCampus: Where WordPress meets Higher Education takes place July 2021 in New Orleans, Louisiana</title>
 		<style type="text/css">
-			.st0{fill:#494949;}
+			.letters--wp{opacity:0.7;}
 		</style>
-		<g id="logo_1_">
-			<path class="st0" d="M155,2l-31.9,132.8h-16.6l-28.9-103l-26.8,103H33.6L0,2h17.2l26.5,107.6L71.9,2h13.5l30.3,107.6L140.4,2H155z"
+		<g>
+			<path class="letters--wp" d="M155,2l-31.9,132.8h-16.6l-28.9-103l-26.8,103H33.6L0,2h17.2l26.5,107.6L71.9,2h13.5l30.3,107.6L140.4,2H155z"
 			/>
-			<path class="st0" d="M216.6,134.8H200V2h47c14.7,0,25.5,4,32.5,12c7,8,10.5,17.1,10.5,27.4c0,11.4-3.8,20.9-11.4,28.3
+			<path class="letters--wp" d="M216.6,134.8H200V2h47c14.7,0,25.5,4,32.5,12c7,8,10.5,17.1,10.5,27.4c0,11.4-3.8,20.9-11.4,28.3
 		c-7.6,7.5-17.6,11.2-29.8,11.2h-32.1V134.8z M216.6,67.1h30.5c7.8,0,14.1-2.4,18.9-7.1c4.8-4.7,7.2-10.9,7.2-18.6
 		c0-6.6-2.1-12.5-6.4-17.7c-4.3-5.2-10.5-7.8-18.5-7.8h-31.6V67.1z"/>
 			<path d="M407,84.1l37.2,2.2c-1.7,16.3-7.7,28.8-18,37.5c-10.3,8.7-22.9,13-37.8,13c-18,0-32.5-6-43.6-17.9
