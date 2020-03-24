@@ -29,7 +29,7 @@ add_action( 'wp', 'wpcampus_2020_setup_theme_parts', 10 );
  */
 function wpcampus_2020_enqueue_theme() {
 
-	$assets_ver = '1.1';
+	$assets_ver = '1.2';
 
 	// Set the directories.
 	$wpcampus_dir = trailingslashit( get_stylesheet_directory_uri() );
@@ -111,9 +111,13 @@ function wpcampus_2020_print_header() {
 
 	$menu = [
 		[
-			'href' => '/about/',
-			'text' => 'About',
+			'href'     => '/about/',
+			'text'     => 'About',
 			'children' => [
+				[
+					'href' => '/about/status-of-event/',
+					'text' => 'Status of event',
+				],
 				[
 					'href' => '/about/organizers',
 					'text' => 'Organizers',
