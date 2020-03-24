@@ -130,12 +130,6 @@ function wpcampus_2021_print_header() {
 		[
 			'href'     => '/speakers/',
 			'text'     => 'Speaking',
-			'children' => [
-				[
-					'href' => '/speakers/application',
-					'text' => 'Application',
-				],
-			],
 		],
 		[ 'href' => '/sponsors/', 'text' => 'Sponsors' ],
 	];
