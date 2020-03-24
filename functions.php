@@ -115,6 +115,10 @@ function wpcampus_2021_print_header() {
 			'text'     => 'About',
 			'children' => [
 				[
+					'href' => '/about/',
+					'text' => 'About the event',
+				],
+				[
 					'href' => '/about/organizers',
 					'text' => 'Organizers',
 				],
