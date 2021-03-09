@@ -15,7 +15,7 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 
 #wpc-header {
 	background: $header-color-bg;
-	padding: $header-padding-vert $header-padding-horiz;
+	padding: $header-padding-vert 0;
 	color: $header-color;
 	overflow: hidden;
 	position: relative;
@@ -121,11 +121,6 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 
 	.social-media-icons {
 		display: none;
-	}
-
-	& > .wpc-container {
-		max-width: 1000px;
-		margin: 0 auto;
 	}
 
 	@media #{$header-menu-bp-closed} {

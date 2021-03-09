@@ -1,6 +1,24 @@
 @import "settings";
 @import "mixins";
 
+.wpc-container,
+#wpc-network-banner .wpc-container,
+#wpc-notifications .wpc-container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+
+	@media screen and (min-width: 860px) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+#wpc-content {
+	padding: 2rem 0;
+}
+
 //@import "components/main";
 
 @import "components/header";
@@ -30,6 +48,14 @@
 
 	.wpc-notification {
 		background: $tulane-green-light;
+	}
+}
+
+body.home,
+body.page-home {
+
+	#wpc-wrapper {
+		height: 100%;
 	}
 }
 
