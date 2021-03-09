@@ -29,7 +29,7 @@ add_action( 'wp', 'wpcampus_2021_setup_theme_parts', 10 );
  */
 function wpcampus_2021_enqueue_theme() {
 
-	$assets_ver = '1.2';
+	$assets_ver = '1.3';
 
 	// Set the directories.
 	$wpcampus_dir = trailingslashit( get_stylesheet_directory_uri() );
