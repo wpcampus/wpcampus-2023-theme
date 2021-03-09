@@ -37,7 +37,7 @@ gulp.task('sass', function(done) {
 			suffix: '.min'
 		}))
 		.pipe(gulp.dest(dest.sass))
-		.pipe(notify('WPC 2021 SASS compiled'))
+		.pipe(notify('WPC 2022 SASS compiled'))
 		.on('end',done);
 });
 
@@ -52,7 +52,7 @@ gulp.task('js', function(done) {
 			}
 		}))
 		.pipe(gulp.dest(dest.js))
-		.pipe(notify('WPC 2021 JS compiled'))
+		.pipe(notify('WPC 2022 JS compiled'))
 		.on('end',done);
 });
 

@@ -41,12 +41,12 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 		color: inherit;
 	}
 
-	.wpc-2021-logo-link {
+	.wpc-2022-logo-link {
 		display: block;
 		margin: 0;
 	}
 
-	.wpc-2021-logo {
+	.wpc-2022-logo {
 		display: block;
 		fill: #fff;
 		margin: 0 auto;
@@ -77,7 +77,7 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 		}
 	}
 
-	.wpc-2021-nav-primary {
+	.wpc-2022-nav-primary {
 		display: none;
 		color: inherit;
 
@@ -176,7 +176,7 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 				}
 			}
 
-			.wpc-2021-nav-primary {
+			.wpc-2022-nav-primary {
 				display: block;
 				grid-column: 1 / span 2;
 				grid-row: 2 / span 1;
@@ -253,11 +253,11 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 
 	@media #{$header-menu-bp-open} {
 
-		.wpc-2021-logo-link {
+		.wpc-2022-logo-link {
 			height: $header-logo-height;
 		}
 
-		.wpc-2021-logo {
+		.wpc-2022-logo {
 			height: $header-logo-height;
 		}
 
@@ -265,7 +265,7 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 			display: none;
 		}
 
-		.wpc-2021-nav-primary {
+		.wpc-2022-nav-primary {
 			display: block;
 			font-size: 1.175em;
 			margin: .75em 0 -0.5em;
@@ -411,7 +411,7 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 			right: 5%;
 		}
 
-		.wpc-2021-nav-primary {
+		.wpc-2022-nav-primary {
 			flex-grow: 1;
 			align-self: center;
 			padding: 0 0 0 2em;
