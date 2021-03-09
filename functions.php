@@ -167,7 +167,7 @@ add_action( 'wpc_add_to_header', 'wpcampus_2021_print_header', 10 );
 
 function wpcampus_2021_print_site_h1() {
 	?>
-	<h1 class="for-screen-reader">WPCampus: Where WordPress Meets Higher Education</h1>
+	<h1 class="for-screen-reader">WPCampus: Where WordPress meets higher education</h1>
 	<?php
 }
 
@@ -204,7 +204,7 @@ add_action( 'wpc_add_before_body', 'wpcampus_2021_print_hero', 2 );
 function wpcampus_2021_print_logo( $color = 'black' ) {
 	?>
 	<svg class="wpc-2021-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1270 320" style="enable-background:new 0 0 1270 320;" xml:space="preserve">
-		<title>WPCampus: Where WordPress meets Higher Education takes place July 2021 in New Orleans, Louisiana</title>
+		<title>WPCampus: Where WordPress meets higher education takes place July 2021 in New Orleans, Louisiana</title>
 		<style type="text/css">
 			.letters--wp {
 				opacity: 0.7;
