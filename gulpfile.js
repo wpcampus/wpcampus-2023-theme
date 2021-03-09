@@ -10,7 +10,8 @@ const sass = require('gulp-sass');
 // Define the source paths for each file type.
 const src = {
 	js: ['assets/js/src/*.js'],
-	sass: ['assets/css/src/**/*','!assets/css/src/components']
+	sass: ['assets/css/src/**/*','!assets/css/src/components'],
+	sassWatch: ['assets/css/src/**/*']
 };
 
 // Define the destination paths for each file type.
@@ -64,6 +65,6 @@ gulp.task('default', gulp.series('compile'));
 // I've got my eyes on you(r file changes).
 gulp.task('watch', gulp.series('default',function(done) {
 	gulp.watch(src.js, gulp.series('js'));
-	gulp.watch(src.sass,gulp.series('sass'));
+	gulp.watch(src.sassWatch,gulp.series('sass'));
 	return done();
 }));
