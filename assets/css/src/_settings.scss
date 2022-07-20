@@ -24,14 +24,14 @@ $hero-top: $banner-height + $header-height;
 
 // Menu
 $header-menu-bp-width: 540px;
-$header-menu-bp-closed: "screen and (max-width: " + ( $header-menu-bp-width - 1px ) + ");";
-$header-menu-bp-open: "screen and (min-width: " + $header-menu-bp-width + ");";
+$header-menu-bp-closed: "screen and (max-width: " + ( $header-menu-bp-width - 1px ) + ")";
+$header-menu-bp-open: "screen and (min-width: " + $header-menu-bp-width + ")";
 
 $header-menu-bp-wide-open-width: 1020px;
-$header-menu-bp-wide-open: "screen and (min-width: " + $header-menu-bp-wide-open-width + ");";
+$header-menu-bp-wide-open: "screen and (min-width: " + $header-menu-bp-wide-open-width + ")";
 
 $header-menu-bp-superwide-width: 1520px;
-$header-menu-bp-superwide: "screen and (min-width: " + $header-menu-bp-superwide-width + ");";
+$header-menu-bp-superwide: "screen and (min-width: " + $header-menu-bp-superwide-width + ")";
 
 $wpc-toggle-bar-bg: #fff;
 $wpc-toggle-bar-width: 25px;

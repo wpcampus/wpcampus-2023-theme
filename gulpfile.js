@@ -5,7 +5,7 @@ const mergeMediaQueries = require('gulp-merge-media-queries');
 const minify = require('gulp-minify');
 const notify = require('gulp-notify');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 
 // Define the source paths for each file type.
 const src = {
