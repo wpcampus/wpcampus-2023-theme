@@ -1,6 +1,6 @@
-# WPCampus 2022 - WordPress Theme
+# WPCampus 2023 - WordPress Theme
 
-This is the WordPress theme used to power the WPCampus 2022 website at [https://2022.wpcampus.org](https://2022.wpcampus.org).
+This is the WordPress theme used to power the WPCampus 2023 website at [https://2023.wpcampus.org](https://2023.wpcampus.org).
 
 ## Disclaimer
 

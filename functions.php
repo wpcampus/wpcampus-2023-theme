@@ -6,7 +6,7 @@
  * hook available after WP object is setup
  * and we can use conditional tags.
  */
-function wpcampus_2022_setup_theme_parts() {
+function wpcampus_2023_setup_theme_parts() {
 
 	// Move notifications on the home page.
 	// Print network notifications.
@@ -18,16 +18,16 @@ function wpcampus_2022_setup_theme_parts() {
 	}
 
 	if ( is_front_page() ) {
-		add_action( 'wpcampus_before_article', 'wpcampus_2022_print_site_h1' );
+		add_action( 'wpcampus_before_article', 'wpcampus_2023_print_site_h1' );
 	}
 }
 
-add_action( 'wp', 'wpcampus_2022_setup_theme_parts', 10 );
+add_action( 'wp', 'wpcampus_2023_setup_theme_parts', 10 );
 
 /**
  * Setup/enqueue styles and scripts for theme.
  */
-function wpcampus_2022_enqueue_theme() {
+function wpcampus_2023_enqueue_theme() {
 
 	$assets_ver = '1.3';
 
@@ -37,12 +37,12 @@ function wpcampus_2022_enqueue_theme() {
 	$wpcampus_dir_js = $wpcampus_dir . 'assets/js/';
 
 	// Enqueue the base styles and script.
-	wp_enqueue_style( 'wpcampus-2022', $wpcampus_dir_css . 'styles.min.css', [ 'wpcampus-parent' ], $assets_ver );
+	wp_enqueue_style( 'wpcampus-2023', $wpcampus_dir_css . 'styles.min.css', [ 'wpcampus-parent' ], $assets_ver );
 
 	// @TODO move to network?
-	wp_enqueue_script( 'wpcampus-2022-nav-focus', $wpcampus_dir_js . 'nav-focus.min.js', [], $assets_ver, true );
+	wp_enqueue_script( 'wpcampus-2023-nav-focus', $wpcampus_dir_js . 'nav-focus.min.js', [], $assets_ver, true );
 	wp_localize_script(
-		'wpcampus-2022-nav-focus',
+		'wpcampus-2023-nav-focus',
 		'wp_nav_focus',
 		[
 			'expand'   => __( 'Expand child menu', 'wpcampus-parent' ),
@@ -52,9 +52,9 @@ function wpcampus_2022_enqueue_theme() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'wpcampus_2022_enqueue_theme', 10 );
+add_action( 'wp_enqueue_scripts', 'wpcampus_2023_enqueue_theme', 10 );
 
-function wpcampus_2022_print_header_menu_item( $menu_item ) {
+function wpcampus_2023_print_header_menu_item( $menu_item ) {
 
 	$is_current = $_SERVER['REQUEST_URI'] === $menu_item['href'];
 
@@ -94,7 +94,7 @@ function wpcampus_2022_print_header_menu_item( $menu_item ) {
 				<?php
 
 				foreach ( $menu_item['children'] as $child ) {
-					wpcampus_2022_print_header_menu_item( $child );
+					wpcampus_2023_print_header_menu_item( $child );
 				}
 
 				?>
@@ -107,7 +107,7 @@ function wpcampus_2022_print_header_menu_item( $menu_item ) {
 	<?php
 }
 
-function wpcampus_2022_print_header() {
+function wpcampus_2023_print_header() {
 
 	$menu = [
 		[
@@ -136,17 +136,17 @@ function wpcampus_2022_print_header() {
 
 	?>
 	<div class="wpc-container">
-		<a class="wpc-2022-logo-link" href="/" title="WPCampus 2022 Home"><?php wpcampus_2022_print_logo(); ?></a>
-		<button class="wpc-toggle-menu" data-toggle="wpc-header" aria-label="<?php _e( 'Toggle menu', 'wpcampus-2022' ); ?>">
+		<a class="wpc-2023-logo-link" href="/" title="WPCampus 2023 Home"><?php wpcampus_2023_print_logo(); ?></a>
+		<button class="wpc-toggle-menu" data-toggle="wpc-header" aria-label="<?php _e( 'Toggle menu', 'wpcampus-2023' ); ?>">
 			<div class="wpc-toggle-bar"></div>
-			<div class="wpc-open-menu-label"><?php _e( 'View menu', 'wpcampus-2022' ); ?></div>
+			<div class="wpc-open-menu-label"><?php _e( 'View menu', 'wpcampus-2023' ); ?></div>
 		</button>
-		<nav class="wpc-2022-nav-primary nav--toggle-sub" aria-label="Primary">
+		<nav class="wpc-2023-nav-primary nav--toggle-sub" aria-label="Primary">
 			<ul>
 				<?php
 
 				foreach ( $menu as $menu_item ) {
-					wpcampus_2022_print_header_menu_item( $menu_item );
+					wpcampus_2023_print_header_menu_item( $menu_item );
 				}
 
 				?>
@@ -163,9 +163,9 @@ function wpcampus_2022_print_header() {
 	<?php
 }
 
-add_action( 'wpc_add_to_header', 'wpcampus_2022_print_header', 10 );
+add_action( 'wpc_add_to_header', 'wpcampus_2023_print_header', 10 );
 
-function wpcampus_2022_print_site_h1() {
+function wpcampus_2023_print_site_h1() {
 	?>
 	<h1 class="for-screen-reader">WPCampus: Where WordPress meets higher education</h1>
 	<?php
@@ -174,7 +174,7 @@ function wpcampus_2022_print_site_h1() {
 /**
  * Add header action button(s).
  */
-function wpcampus_2022_print_hero() {
+function wpcampus_2023_print_hero() {
 
 	if ( ! is_front_page() ) {
 		return;
@@ -199,12 +199,12 @@ function wpcampus_2022_print_hero() {
 	<?php
 }
 
-add_action( 'wpc_add_before_body', 'wpcampus_2022_print_hero', 2 );
+add_action( 'wpc_add_before_body', 'wpcampus_2023_print_hero', 2 );
 
-function wpcampus_2022_print_logo( $color = 'black' ) {
+function wpcampus_2023_print_logo( $color = 'black' ) {
 	?>
-    <svg class="wpc-2022-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1270 320" style="enable-background:new 0 0 1270 320;" xml:space="preserve">
-		<title>WPCampus: Where WordPress meets higher education takes place July 2022 in New Orleans, Louisiana</title>
+    <svg class="wpc-2023-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1270 320" style="enable-background:new 0 0 1270 320;" xml:space="preserve">
+		<title>WPCampus: Where WordPress meets higher education takes place July 12-14, 2023 in New Orleans, Louisiana</title>
         <style type="text/css">
 			.letters--wp {
 				opacity: 0.7;
@@ -373,60 +373,3 @@ function wpcampus_2022_print_logo( $color = 'black' ) {
     </svg>
 	<?php
 }
-
-// @TODO setup?
-function wpcampus_2022_get_callout_status( $args = [] ) {
-
-    return '';
-
-	$defaults = [
-		'heading'      => 2,
-		'show_heading' => true,
-	];
-	$args = wp_parse_args( $args, $defaults );
-	$markup = '<div class="callout light-royal-blue">';
-
-	if ( ! empty( $args['show_heading'] ) ) {
-
-		if ( empty( $args['heading'] ) ) {
-			$heading_level = $defaults['heading'];
-		} else {
-			$heading_level = (int) $args['heading'];
-			if ( $heading_level < 1 || $heading_level > 6 ) {
-				$heading_level = $defaults['heading'];
-			}
-		}
-
-		$heading_str_start = '<h' . $heading_level . '>';
-		$heading_str_end = '</h' . $heading_level . '>';
-
-		$markup .= $heading_str_start . 'Status of the event' . $heading_str_end;
-
-	}
-
-	$markup .= '<p>WPCampus 2022 was scheduled for New Orleans after <a href="https://2020.wpcampus.org">WPCampus 2020</a> pivoted to an online conference due to COVID-19. We are extremely grateful that Tulane University IT in New Orleans has agreed to continue to be our in-person venue sponsor. The planning committee is working to finalize details for the 2022 event. <strong><a href="http://eepurl.com/dukZvP">Subscribe to our newsletter</a> for updates.</strong></p>
-		<p><strong>The following dates are being considered for WPCampus 2022:</strong></p>
-		<ul>
- 	        <li>July 14-16, 2022 (Wed-Fri)</li>
- 	        <li>July 21-23, 2022  (Wed-Fri)</li>
- 	        <li>July 28-30, 2022  (Wed-Fri)</li>
-		</ul>
-	</div>';
-	return $markup;
-}
-
-function wpcampus_2022_print_callout_status( $args = [] ) {
-	echo wpcampus_2022_get_callout_status( $args );
-}
-
-function wpcampus_2022_process_status_shortcode( $args ) {
-	$args = shortcode_atts(
-		[
-			'heading'      => 2,
-			'show_heading' => true,
-		], $args, 'wpcampus_2022_status'
-	);
-	return wpcampus_2022_get_callout_status( $args );
-}
-
-add_shortcode( 'wpcampus_2022_status', 'wpcampus_2022_process_status_shortcode' );
