@@ -33,7 +33,6 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 		opacity: 0.05;
 		overflow: hidden;
 		z-index: -1;
-
 	}
 
 	a {
@@ -252,6 +251,7 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 	}
 
 	@media #{$header-menu-bp-open} {
+		overflow: visible;
 
 		.wpc-2023-logo-link {
 			height: $header-logo-height;
@@ -275,6 +275,7 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 				flex-wrap: wrap;
 				justify-content: center;
 				align-content: center;
+				gap: 0.5rem;
 
 				li.nav__item {
 					flex-basis: auto;
@@ -451,3 +452,32 @@ html.wpc-menu-open #wpc-network-footer .social-media-icons {
 	}
 }
 
+#wpc-banner-hybrid {
+	background-color: $tulane-green-dark;
+	color: #fff;
+	padding: 12px 16px;
+	text-align: center;
+
+	a {
+		display: inline-block;
+		color: inherit;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 0.35rem;
+		padding: 4px 6px;
+		margin: 0 0 0 6px;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background-color: rgba(255, 255, 255, 0.2);
+		}
+	}
+
+	& > *:first-child {
+		margin-top: 0;
+	}
+
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,52 @@
+.gform_wrapper.wpc-reg-form-wrapper_wrapper {
+
+	.gf_step {
+		margin: 0;
+		width: auto;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 4px 8px;
+	}
+
+	.gf_step_label {
+		padding: 0;
+	}
+
+	.gf_step_number {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 35px;
+		height: 35px;
+	}
+
+	.gf_step_completed .gf_step_number::before {
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	.gf_page_steps {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		padding-bottom: 20px;
+		margin-bottom: 32px;
+	}
+
+	.gsection {
+		background-color: #eee;
+		padding: 16px;
+		margin-top: 20px;
+
+		.gsection_title {
+			margin: 0;
+		}
+	}
+
+	.gform_fields {
+		grid-row-gap: 24px;
+	}
+}

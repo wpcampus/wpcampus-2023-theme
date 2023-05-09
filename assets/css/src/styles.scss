@@ -110,3 +110,34 @@ body.page-home {
 		}
 	}
 }
+
+.wpc-pricing-grid {
+	display: flex;
+	gap: 1rem;
+	margin: 0 0 2rem;
+
+	.wpc-pricing-item {
+		flex: 1;
+		background-color: #fafafa;
+		padding: 2rem;
+		border-radius: 0.35rem;
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+
+		&.wpc-pricing-item--inperson {
+			background-color: #e4eaf4;
+
+			.button.primary {
+				background-color: #1159bd;
+			}
+		}
+	}
+
+	@media screen and (max-width:959px) {
+		flex-direction: column;
+	}
+}
+
+@import "components/forms";

@@ -3,7 +3,6 @@ const cleanCSS = require('gulp-clean-css');
 const gulp = require('gulp');
 const mergeMediaQueries = require('gulp-merge-media-queries');
 const minify = require('gulp-minify');
-const notify = require('gulp-notify');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass')(require('sass'));
 
@@ -37,7 +36,6 @@ gulp.task('sass', function(done) {
 			suffix: '.min'
 		}))
 		.pipe(gulp.dest(dest.sass))
-		.pipe(notify('WPC 2023 SASS compiled'))
 		.on('end',done);
 });
 
@@ -52,7 +50,6 @@ gulp.task('js', function(done) {
 			}
 		}))
 		.pipe(gulp.dest(dest.js))
-		.pipe(notify('WPC 2023 JS compiled'))
 		.on('end',done);
 });
 
